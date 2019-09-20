@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "Options";
+}
+@model D11Analytics.ViewModels.MatchDetails
+
+<div class="row" style="margin-top: 5%;">
+    <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <a href="/Contest/Information">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <p class="lead"> Choose your Contests </p>
+                    <p>Starts in @Model.startingTime</p>
+                    <p>
+                        <br /><br /><i>Not sure how to crack the contest. Click here to know more on the contest analytics</i>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <a href="/Home/PlayerProfile">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+
+
+                </div>
+                <div class="panel-body">
+                    <p class="lead"> Know your Players </p>
+                    <p>Starts in @Model.startingTime</p>
+
+                    <p>
+
+                        <br /><br /><i>Not sure how to crack the contest. Click here to know more on the contest analytics</i>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <a href="/Home/Historical">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+
+
+                </div>
+                <div class="panel-body">
+                    <p class="lead"> Find the historical data </p>
+                    <p>Starts in @Model.startingTime</p>
+
+                    <p>
+
+                        <br /><br /><i>Not sure how to crack the contest. Click here to know more on the contest analytics</i>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

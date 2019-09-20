@@ -1,0 +1,33 @@
+﻿@model D11Analytics.ViewModels.MatchDetails
+
+<div class="row" style="margin-top: 5%;">
+    @foreach (var items in Model.FantasyMatchLst)
+    {
+        <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+            <div class="panel panel-default">
+                <a href="#" onclick="GoToFantasyScore(@items.tourId,@items.matchId,'@items.site');">
+                    <div class="panel-heading">
+                        <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                            Fantasy Matches
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <p class="lead">@items.name</p>
+                        <p class="lead">@items.startdate</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+
+</div>
+<script type="text/javascript">
+    $(function () {
+
+    })
+
+    function GoToFantasyScore(tourId, matchId, site) {
+        debugger
+        location.href = "/Home/FantasyPoints?tourId=" + tourId + "&matchId=" + matchId + "&site=" + site;
+    }
+</script>

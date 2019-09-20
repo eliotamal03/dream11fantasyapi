@@ -1,0 +1,50 @@
+﻿<div class="row" style="margin-top: 5%;">
+    @if (Model != null && Model.SquadList != null && Model.SquadList.Count > 0)
+    {
+        @foreach (var items in Model.SquadList)
+        {
+            <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+                <div class="panel panel-default">
+                    <a href="#" onclick="GoToOptions(@items.tourId,@items.id,'@items.flagNameOne','@items.flagNameTwo','@items.flagNameWithNameOne','@items.flagNameWithNameTwo','@items.TeamNameOne','@items.TeamNameTwo','@items.name','@items.startingTime','@Model.SportName');">
+                        <div class="panel-heading">
+                            <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                                <img src="@items.flagNameWithNameOne" style="width:100%">
+                            </div>
+                            <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                                <img src="@items.flagNameWithNameTwo" style="width:100%">
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <p class="lead">@items.name</p>
+                            <p>Starts at @items.startDate</p>
+
+                            <p>
+                                <img src="@items.flagNameOne">
+                                <img src="@items.flagNameTwo">
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    }
+
+
+</div>
+
+<script type="text/javascript">
+    function GoToOptions(tourId, matchId, flagname1, flagname2, flagwname1, flagwname2, teamName1, teamName2, fullTeam, startingTime, sportName) {
+        $.post("/Home/OptionsJson", {
+            "tourId": tourId, "matchId": matchId, "flagNameOne": flagname1, "flagNameWithNameOne": flagwname1,
+            "flagNameTwo": flagname2, "flagNameWithNameTwo": flagwname2,
+            "TeamNameOne": teamName1, "TeamNameTwo": teamName2, "FullTeamName": fullTeam, "StartingTime": startingTime,
+            "SportName": sportName
+        },
+            function (data) {
+                if (data) {
+                    location.href = "/Home/Options";
+                }
+            });
+
+    }
+</script>

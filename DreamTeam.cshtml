@@ -1,0 +1,96 @@
+﻿@model D11Analytics.ViewModels.MatchDetails
+@{
+    ViewData["Title"] = "DreamTeam";
+}
+
+<h2>DreamTeam</h2>
+<table id="example" class="display table-responsive table-bordered" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Specialization</th>
+            <th>Credits</th>
+            <th>Points</th>
+            <th>Percentage</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var items in Model.PlayerList)
+        {
+            <tr>
+                <td><a href="/Analytics/PlayerStats?playerId=@items.PlayerId">@items.name</a></td>
+                <td>@items.specialization</td>
+                <td>@items.credits</td>
+                <td>@items.points</td>
+                <td>@items.currentPercentage</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+
+    <table id="percentTable" class="display table-responsive table-bordered" width="100%">
+        <thead>
+            <tr>
+                <th>100-70</th>
+                <th>70-60</th>
+                <th>60-50</th>
+                <th>50-40</th>
+                <th>40-30</th>
+                <th>30-20</th>
+                <th>20-10</th>
+                <th>10-0</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var items in Model.PlayPercentageLst)
+            {
+                <tr>
+                    <td>@items.firstclass</td>
+                    <td>@items.secondclass</td>
+                    <td>@items.thirdclass</td>
+                    <td>@items.fourthclass</td>
+                    <td>@items.fifthclass</td>
+                    <td>@items.sixthclass</td>
+                    <td>@items.seventhclass</td>
+                    <td>@items.eigthclass</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $('#example').DataTable({
+                scrollY: "300px",
+                scrollX: true,
+                scrollCollapse: true,
+                paging: false,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                fixedColumns: {
+                    leftColumns: 1,
+                }
+            });
+
+            $('#percentTable').DataTable({
+                scrollY: "300px",
+                scrollX: true,
+                scrollCollapse: true,
+                paging: false,
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ],
+                fixedColumns: {
+                    leftColumns: 1,
+                }
+            });
+        });
+
+    </script>
+
+

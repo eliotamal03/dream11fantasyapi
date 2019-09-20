@@ -1,0 +1,11 @@
+﻿{
+  "returnType": "response",
+  "query": "query PlayerProfileQuery( $id: Int = 1 $matchId: Int = 100 $tourId: Int = 10 $site: String = \"cricket\") { player(id: $id, matchId: $matchId, tourId: $tourId, site: $site) { artwork { src } stats { dob performance { match { name startTime } points selectionRate } } credits points name type { name } squad { name } playerProfileDisplay }}",
+  "variables": {
+    "id": 1002,
+    "tourId": 876,
+    "matchId": 11514,
+    "teamId": null,
+    "site": "cricket"
+  }
+}

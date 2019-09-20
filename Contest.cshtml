@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Contest";
+}
+@model D11Analytics.ViewModels.MatchDetails
+<h2>Contest</h2>
+
+<div class="row" style="margin-top: 5%;">
+    @for (int i = 0; i < 8; i++)
+    {
+        <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+
+                </div>
+                <div class="panel-body">
+                    <p class="lead">
+                        Mega Contest
+                        <img src="https://d13ir53smqqeyp.cloudfront.net/mobile/apps/segmented-contest/megacontest_final.png" width="28px" height="28px">
+                    </p>
+                    <p>Starts in 0hr</p>
+                    <p>Prize:100</p>
+                    <p>Winners:100</p>
+                    <p>Total:1</p>
+                    <input type="button" class="btn btn-primary" value="% Calculator" />
+                    <input type="button" class="btn btn-primary" value="Invest Calculator" />
+
+                </div>
+            </div>
+        </div>
+
+    }
+
+</div>
