@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Contest";
+}
+@model D11Analytics.ViewModels.ContestDetails
+<h2>Contest</h2>
+
+<div class="row" style="margin-top: 5%;">
+    @foreach (var items in Model.ContestList)
+    {
+        <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <p class="lead">
+                        @items.ContestName <br />
+                        <h5>@items.ContestDesc</h5><br />
+                        <img src="@items.ContestImg" width="28px" height="28px">
+                    </p>
+                    <p>Starts in Starts in @Model.startingTime</p>
+                    <p>Total Contest:@items.TotalContestCount</p>
+                    <a href="/Contest/ContestDetail/?contestName=@items.ContestName">View More</a>
+                    @*<input type="button" class="btn btn-primary" value="Invest Calculator" />*@
+
+                </div>
+            </div>
+        </div>
+    }
+
+    @*<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Percentage Calculator</h4>
+                    </div>
+                    <div class="modal-body">
+                        @Html.DropDownListFor("test", new SelectList(Model.WinnersList, "Value", "Text"), htmlAttributes: new { @class = "form-control", id = "contestWinId" })
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="myModal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</div>
+
+<script type="text/javascript">
+    function ContestDetails(contestName) {
+        $.post("/Contest/ContestDetail", {
+            "contestName": contestName
+        },
+            function (data) {
+                if (data) {
+                    location.href = "/Contest/ContestDetail";
+                }
+            });
+        //$.ajax({
+        //    url: "/Contest/_ContestAddon",
+        //    contentType: 'application/json; charset=utf-8',
+        //    dataType: 'html',
+        //    type: 'GET',
+        //    success: function (data) {
+        //$("#myModal").modal('show');
+        ////    }
+        ////});
+    }
+</script>

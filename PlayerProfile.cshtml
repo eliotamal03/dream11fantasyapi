@@ -1,0 +1,53 @@
+﻿@model D11Analytics.ViewModels.MatchDetails
+@{
+    ViewData["Title"] = "PlayerProfile";
+    int count = 0;
+}
+
+<h2>Player Profile</h2>
+@foreach (var items in Model.PlayerList)
+{
+    <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="well well-sm">
+                    <div class="media-body">
+                        <h4 class="media-heading">
+                            @items.name
+                            <img src="@Model.flagNameOne" style="width:15%" />
+                        </h4>
+                        @if (items.specialization.ToLower().Equals("wk"))
+                        {
+                            <img src="https://assets.dream11.com/public/imgs/playerType/wk-img.png" style="width:15%">
+                        }
+                        else if (items.specialization.ToLower().Equals("bowl"))
+                        {
+                            <img src="https://assets.dream11.com/public/imgs/playerType/bw-img.png" style="width:15%">
+                        }
+                        else if (items.specialization.ToLower().Equals("all"))
+                        {
+                            <img src="https://assets.dream11.com/public/imgs/playerType/ar-img.png" style="width:15%">
+                        }
+                        else if (items.specialization.ToLower().Equals("bat"))
+                        {
+                            <img src="https://assets.dream11.com/public/imgs/playerType/bt-img.png" style="width:15%">
+                        }
+
+                    </div>
+                    <div class="media">
+                        <a class="thumbnail pull-left" href="#">
+                            <img class="media-object" src="@items.artwork[0].src">
+                        </a>
+                    </div>
+                    <span class="label label-success">Credits: @items.credits</span>
+                    <span class="label label-success">Points: @items.points</span><br /><br />
+                    <a href="/Analytics/PlayerStats?playerId=@items.PlayerId" class="btn btn-success">Full Stats</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    count++;
+}
+
+

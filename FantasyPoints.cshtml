@@ -1,0 +1,48 @@
+﻿@model D11Analytics.ViewModels.MatchDetails
+@{
+    ViewData["Title"] = "Fantasy Scorecard";
+}
+
+<h2>DreamTeam</h2>
+<table id="example" class="display table-responsive table-bordered" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            @for (int i = 0; i < Model.FantasyDetailsLst.FantasyHeaderLst.Count; i++)
+            {
+                <th>@Model.FantasyDetailsLst.FantasyHeaderLst[i].name</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var items in Model.FantasyDetailsLst.FantasyScoreCard.players)
+        {
+            <tr>
+                <td>@items.player.name</td>
+                @foreach (var fantasyItems in items.fantasyPoints)
+                {
+                    <td>@fantasyItems.score</td>
+                }
+            </tr>
+
+        }
+    </tbody>
+</table>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $('#example').DataTable({
+            scrollY: "300px",
+            scrollX: true,
+            scrollCollapse: true,
+            paging: false,
+            dom: 'Bfrtip',
+            buttons: [
+                'copy', 'csv', 'excel', 'pdf', 'print'
+            ],
+            fixedColumns: {
+                leftColumns: 1,
+            }
+        });
+    });
+</script>

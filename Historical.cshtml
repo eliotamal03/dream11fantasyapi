@@ -1,0 +1,92 @@
+﻿@model D11Analytics.ViewModels.MatchDetails
+@{
+    ViewData["Title"] = "Historical";
+}
+<style>
+    th, td {
+        white-space: nowrap;
+    }
+
+    div.dataTables_wrapper {
+        width: 800px;
+        margin: 0 auto;
+    }
+</style>
+<h2>Historical</h2>
+<div class="row" style="margin-top: 5%;">
+    <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <a href="/Home/DreamTeam">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+
+
+                </div>
+                <div class="panel-body">
+                    <p class="lead"> Dream11 Team </p>
+                    <p>Starts in 0hr</p>
+
+                    <p>
+
+                        <br /><br /><i>Not sure how to crack the contest. Click here to know more on the contest analytics</i>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <a href="/Home/FantasyMatch">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <p class="lead">Fantasy Scorecard </p>
+                    <p>Starts in 0hr</p>
+
+                    <p>
+
+                        <br /><br /><i>Not sure how to crack the contest. Click here to know more on the contest analytics</i>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-12 col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <a href="/Home/DreamTeam">
+                <div class="panel-heading">
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameOne" style="width:100%">
+                    </div>
+                    <div class="col-lg-6 col-sm-6 col-xs-6 col-md-6">
+                        <img src="@Model.flagNameTwo" style="width:100%">
+                    </div>
+
+
+                </div>
+                <div class="panel-body">
+                    <p class="lead"> Injured/Missing Players</p>
+                    <p>Starts in 0hr</p>
+
+                    <p>
+
+                        <br /><br /><i>Not sure how to crack the contest. Click here to know more on the contest analytics</i>
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
